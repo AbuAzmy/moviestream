@@ -138,31 +138,33 @@ if (window.innerWidth < 600) {
                 />
             </form>`;
 }
-window.onresize = () => {
-    if (window.innerWidth < 600) {
-        document.getElementById("hhh").innerHTML = `
-        <button style="width: 20%" onclick="getPreviousAPIKey()" class="more">previous</button>
-                <button style="width: 20%" onclick="getNextAPIKey()" class="more">next</button>
-                <form id="form" style="width: 50%">
-                    <input 
-                        type="text"
-                        id="search"
-                        placeholder="Search"
-                        class="search"
-                    />
-                </form>`;
-    } else {
-        document.getElementById("hhh").innerHTML = `
-            <button id="me" class="me" onclick="creator()">creator</button>
-			<button onclick="getPreviousAPIKey()" class="more">previous</button>
-			<button onclick="getNextAPIKey()" class="more">next</button>
-			<form id="form">
-				<input
-					type="text"
-					id="search"
-					placeholder="Search"
-					class="search"
-				/>
-			</form>`;
-    }
-}
+
+
+// window.onresize = () => {
+//     if (window.innerWidth < 600) {
+//         document.getElementById("hhh").innerHTML = `
+//         <button style="width: 20%" onclick="getPreviousAPIKey()" class="more">previous</button>
+//                 <button style="width: 20%" onclick="getNextAPIKey()" class="more">next</button>
+//                 <form id="form" style="width: 50%">
+//                     <input 
+//                         type="text"
+//                         id="search"
+//                         placeholder="Search"
+//                         class="search"
+//                     />
+//                 </form>`;
+//     } else {
+//         document.getElementById("hhh").innerHTML = `
+//             <button id="me" class="me" onclick="creator()">creator</button>
+// 			<button onclick="getPreviousAPIKey()" class="more">previous</button>
+// 			<button onclick="getNextAPIKey()" class="more">next</button>
+// 			<form id="form">
+// 				<input
+// 					type="text"
+// 					id="search"
+// 					placeholder="Search"
+// 					class="search"
+// 				/>
+// 			</form>`;
+//     }
+// }
