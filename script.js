@@ -88,3 +88,7 @@ form.addEventListener("submit", (e) => {
 		search.value = "";
 	}
 });
+
+function creator() {
+    document.getElementById("search").placeholder = "sory not added yet"
+}
