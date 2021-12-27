@@ -106,3 +106,61 @@ function creator() {
         clicked = 0
     }
 }
+
+window.addEventListener("change", () => {
+    if (window.innerWidth < 600) {
+        document.header.innerHTML = `
+        <button onclick="getPreviousAPIKey()" class="more">previous</button>
+                <button onclick="getNextAPIKey()" class="more">next</button>
+                <form id="form">
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Search"
+                        class="search"
+                    />
+                </form>`;
+    }
+})
+
+if (window.innerWidth < 600) {
+    document.getElementById("hhh").innerHTML = `
+    <button onclick="getPreviousAPIKey()" class="more">previous</button>
+            <button onclick="getNextAPIKey()" class="more">next</button>
+            <form id="form">
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search"
+                    class="search"
+                />
+            </form>`;
+}
+window.onresize = () => {
+    if (window.innerWidth < 600) {
+        document.getElementById("hhh").innerHTML = `
+        <button onclick="getPreviousAPIKey()" class="more">previous</button>
+                <button onclick="getNextAPIKey()" class="more">next</button>
+                <form id="form">
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Search"
+                        class="search"
+                    />
+                </form>`;
+    } else {
+        document.getElementById("hhh").innerHTML = `
+            <button id="me" class="me" onclick="creator()">creator</button>
+			<button onclick="getPreviousAPIKey()" class="more">previous</button>
+			<button onclick="getNextAPIKey()" class="more">next</button>
+			<form id="form">
+				<input
+					type="text"
+					id="search"
+					placeholder="Search"
+					class="search"
+				/>
+			</form>`;
+    }
+}
