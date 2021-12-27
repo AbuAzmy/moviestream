@@ -107,36 +107,11 @@ function creator() {
     }
 }
 
-window.addEventListener("change", () => {
-    if (window.innerWidth < 600) {
-        document.header.innerHTML = `
-        <button onclick="getPreviousAPIKey()" class="more">previous</button>
-                <button onclick="getNextAPIKey()" class="more">next</button>
-                <form id="form">
-                    <input
-                        type="text"
-                        id="search"
-                        placeholder="Search"
-                        class="search"
-                    />
-                </form>`;
-    }
-})
-
-
 if (window.innerWidth < 600) {
     document.getElementById("hhh").style.fontWeight = "bold"
     document.getElementById("hhh").innerHTML = `
-    <button style="width: 20%" onclick="getPreviousAPIKey()" class="more">previous</button>
-            <button style="width: 20%" onclick="getNextAPIKey()" class="more">next</button>
-            <form id="form" style="width: 50%">
-                <input 
-                    type="text"
-                    id="search"
-                    placeholder="Search"
-                    class="search"
-                />
-            </form>`;
+    <button style="width: 47%; font-size: 3.5vw" onclick="getPreviousAPIKey()" class="more">previous</button>
+            <button style="width: 47%; font-size: 3.5vw" onclick="getNextAPIKey()" class="more">next</button>`;
 }
 
 
