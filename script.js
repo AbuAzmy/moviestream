@@ -123,12 +123,14 @@ window.addEventListener("change", () => {
     }
 })
 
+
 if (window.innerWidth < 600) {
+    document.getElementById("hhh").style.fontWeight = "bold"
     document.getElementById("hhh").innerHTML = `
-    <button onclick="getPreviousAPIKey()" class="more">previous</button>
-            <button onclick="getNextAPIKey()" class="more">next</button>
+    <button style="width: 20%" onclick="getPreviousAPIKey()" class="more">previous</button>
+            <button style="width: 20%" onclick="getNextAPIKey()" class="more">next</button>
             <form id="form">
-                <input
+                <input style="width: 50%"
                     type="text"
                     id="search"
                     placeholder="Search"
@@ -139,10 +141,10 @@ if (window.innerWidth < 600) {
 window.onresize = () => {
     if (window.innerWidth < 600) {
         document.getElementById("hhh").innerHTML = `
-        <button onclick="getPreviousAPIKey()" class="more">previous</button>
-                <button onclick="getNextAPIKey()" class="more">next</button>
-                <form id="form">
-                    <input
+        <button style="width: 20%" onclick="getPreviousAPIKey()" class="more">previous</button>
+                <button style="width: 20%" onclick="getNextAPIKey()" class="more">next</button>
+                <form id="form" style="width: 50%">
+                    <input 
                         type="text"
                         id="search"
                         placeholder="Search"
