@@ -3,17 +3,21 @@ let APIURL =
 
 current = 1;
 function getNextAPIKey() {
-	APIURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${current+1}`;
-    current = current + 1
-    getMovies(APIURL);
+	APIURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${
+		current + 1
+	}`;
+	current = current + 1;
+	getMovies(APIURL);
 }
 
 function getPreviousAPIKey() {
-    if (current > 1) {
-	APIURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${current-1}`;
-    current = current - 1
-    getMovies(APIURL);
-}
+	if (current > 1) {
+		APIURL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${
+			current - 1
+		}`;
+		current = current - 1;
+		getMovies(APIURL);
+	}
 }
 
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
@@ -89,6 +93,16 @@ form.addEventListener("submit", (e) => {
 	}
 });
 
+let clicked = 0;
 function creator() {
-    document.getElementById("search").placeholder = "sory not added yet"
+	button = document.getElementById("me");
+	if (clicked === 0) {
+		button.textContent = "Abdulrahman Azmy :)";
+		button.style.borderRadius = "10px";
+        clicked = 1
+    } else {
+        button.textContent = "creator";
+		button.style.borderRadius = "50px";
+        clicked = 0
+    }
 }
