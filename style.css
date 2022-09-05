@@ -1,159 +1,132 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+	--header-size: 100px;
+
+	--primary: #601bd8 !important;
+	--primary-hover: #6218c2 !important;
+	--primary-focus: rgba(58, 27, 216, 0.125) !important;
+	--primary-inverse: #fff !important;
+}
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    background-color: #22254b;
-    font-family: "Poppins", sans-serif;
-    margin: 0;
+	background-color: #22254b;
+	margin: 0;
 }
 
-.me {
-    position: absolute;
-    top: 1rem;
-    left: 10px;
+nav {
+	padding: 1vw;
 }
 
-header {
-    text-align: center;
-    background-color: #373b69;
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-}
-
-button {
-    margin-right: 1%;
-    height: 40px;
-    text-align: center;
-    padding-right: 1%;
-    padding-left: 1%;
-    background-color: transparent;
-    border: 2px solid #22254b;
-    border-radius: 50px;
-    color: #7378c5;
-    font-family: inherit;
-    font-size: 1.2vw;
-    padding: 0.5rem 1rem;
-    transition: .3s;
+nav input {
+	outline: 2px solid var(--primary);
 }
 
 button:hover {
-    background-color: #22254b;
-    color: rgb(152, 62, 255);
-}
-
-.search {
-    background-color: transparent;
-    border: 2px solid #22254b;
-    border-radius: 50px;
-    color: #fff;
-    font-family: inherit;
-    font-size: 1.2vw;
-    padding: 0.5rem 1rem;
-    height: 40px;
-}
-
-.search::placeholder {
-    color: #7378c5;
-}
-
-.search:focus {
-    background-color: #22254b;
-    outline: none;
+	background-color: #22254b;
+	color: rgb(152, 62, 255);
 }
 
 main {
-    display: flex;
-    flex-wrap: wrap;
+	position: absolute;
+	width: 100vw;
+	height: calc(100vh - var(--header-size));
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .movie {
-    background-color: #373b69;
-    box-shadow: 6px 8px rgb(0, 0, 0);
-    overflow: hidden;
-    position: relative;
-    margin: 1rem;
-    width: 300px;
-    transition: .3s;
+	background-color: #373b69;
+	box-shadow: 6px 8px rgb(0, 0, 0);
+	overflow: hidden;
+	position: relative;
+	margin: 1rem;
+	width: 300px;
+	transition: 0.3s;
 }
 
 .movie img {
-    width: 100%;
+	width: 100%;
 }
 
 .movie:hover {
-    box-shadow: 0 0 6px 8px rgba(0, 0, 0, 0.507);
-    border-radius: 10px;
+	box-shadow: 0 0 6px 8px rgba(0, 0, 0, 0.507);
+	border-radius: 10px;
 }
 
 .movie-info {
-    color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem 1rem;
-    letter-spacing: 0.5px;
+	color: #eee;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 1rem 1rem;
+	letter-spacing: 0.5px;
 }
 
 .movie-info h3 {
-    margin: 0;
+	margin: 0;
 }
 
 .movie-info span {
-    background-color: #22254b;
-    border-radius: 3px;
-    font-weight: bold;
-    padding: 0.25rem 0.5rem;
+	background-color: #22254b;
+	border-radius: 3px;
+	font-weight: bold;
+	padding: 0.25rem 0.5rem;
 }
 
 .movie-info span.green {
-    color: rgb(39, 189, 39);
+	color: rgb(39, 189, 39);
 }
 
 .movie-info span.orange {
-    color: orange;
+	color: orange;
 }
 
 .movie-info span.red {
-    color: rgb(189, 42, 42);
+	color: rgb(189, 42, 42);
 }
 
 .overview {
-    background-color: rgb(36, 2, 90);
-    color: white;
-    padding: 2rem;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    position: absolute;
-    max-height: 100%;
-    overflow: auto;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    transform: translateX(101%) translateY(101%);
-    transition: transform 0.3s ease-in;
+	background-color: rgb(36, 2, 90);
+	color: white;
+	padding: 2rem;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	position: absolute;
+	max-height: 100%;
+	overflow: auto;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transform: translateX(101%) translateY(101%);
+	transition: transform 0.3s ease-in;
 }
 
 .overview::-webkit-scrollbar {
-    width: 20px;
+	width: 20px;
 }
 .overview::-webkit-scrollbar-track {
-    background-color: rgb(10, 0, 47);
+	background-color: rgb(10, 0, 47);
 }
 .overview::-webkit-scrollbar-thumb {
-    background-color: rgb(63, 0, 144);
+	background-color: rgb(63, 0, 144);
 }
 .overview::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(108, 0, 180);
+	background-color: rgb(108, 0, 180);
 }
 
 .overview h3 {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 .movie:hover .overview {
-    transform: translateY(0);
+	transform: translateY(0);
+}
+
+a {
+    color: white
 }

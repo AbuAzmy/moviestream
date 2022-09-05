@@ -25,7 +25,6 @@ const SEARCHAPI =
 	"https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 const main = document.getElementById("main");
-const form = document.getElementById("form");
 const search = document.getElementById("search");
 
 // initially get fav movies
@@ -81,15 +80,14 @@ function getClassByRate(vote) {
 	}
 }
 
-form.addEventListener("submit", (e) => {
-	e.preventDefault();
+search.addEventListener("keyup", (event) => {
+	if (event.key === "Enter") {
+		const searchTerm = search.value;
+		if (searchTerm) {
+			getMovies(SEARCHAPI + searchTerm);
 
-	const searchTerm = search.value;
-
-	if (searchTerm !== "" && searchTerm !== " ") {
-		getMovies(SEARCHAPI + searchTerm);
-
-		search.value = "";
+			search.value = "";
+		}
 	}
 });
 
@@ -97,23 +95,23 @@ let clicked = 0;
 function creator() {
 	button = document.getElementById("me");
 	if (clicked === 0) {
-		button.textContent = "Abdulrahman Azmy :)";
+		button.innerHTML =
+			"<a href='https://www.facebook.com/abdulrahman2oo5'>Abdulrahman Azmy :)</a>";
 		button.style.borderRadius = "10px";
-        clicked = 1
-    } else {
-        button.textContent = "creator";
+		clicked = 1;
+	} else {
+		button.textContent = "creator";
 		button.style.borderRadius = "50px";
-        clicked = 0
-    }
+		clicked = 0;
+	}
 }
 
 if (window.innerWidth < 600) {
-    document.getElementById("hhh").style.fontWeight = "bold"
-    document.getElementById("hhh").innerHTML = `
-    <button style="width: 47%; font-size: 3.5vw" onclick="getPreviousAPIKey()" class="more">previous</button>
-            <button style="width: 47%; font-size: 3.5vw" onclick="getNextAPIKey()" class="more">next</button>`;
+	document.getElementById("second-nav-section").innerHTML = `<li>
+	<input type="text" id="search" placeholder="Search" class="search" />
+</li>
+	`;
 }
-
 
 // window.onresize = () => {
 //     if (window.innerWidth < 600) {
@@ -121,7 +119,7 @@ if (window.innerWidth < 600) {
 //         <button style="width: 20%" onclick="getPreviousAPIKey()" class="more">previous</button>
 //                 <button style="width: 20%" onclick="getNextAPIKey()" class="more">next</button>
 //                 <form id="form" style="width: 50%">
-//                     <input 
+//                     <input
 //                         type="text"
 //                         id="search"
 //                         placeholder="Search"

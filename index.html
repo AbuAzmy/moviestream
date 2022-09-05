@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Movie stream</title>
-		<link rel="stylesheet" href="style.css" />
-		<script src="script.js" defer></script>
-	</head>
-	<body>
-		<header id="hhh">
-            <button id="me" class="me" onclick="creator()">creator</button>
-			<button onclick="getPreviousAPIKey()" class="more">previous</button>
-			<button onclick="getNextAPIKey()" class="more">next</button>
-			<form id="form">
-				<input
-					type="text"
-					id="search"
-					placeholder="Search"
-					class="search"
-				/>
-			</form>
-		</header>
-		<main id="main"></main>
-	</body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Movie stream</title>
+	<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+	<link rel="stylesheet" href="style.css" />
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><button id="me" class="me" onclick="creator()">creator</button></li>
+		</ul>
+		<ul id="second-nav-section">
+			<li><button onclick="getPreviousAPIKey()" class="more">previous</button></li>
+			<li><button onclick="getNextAPIKey()" class="more">next</button></li>
+			<li>
+				<input type="text" id="search" placeholder="Search" class="search" />
+			</li>
+		</ul>
+	</nav>
+	<main id="main"></main>
+</body>
+
 </html>
